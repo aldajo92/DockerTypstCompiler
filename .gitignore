@@ -39,3 +39,4 @@ _ignore/
 # only allow the ws_latex/test folder, ignore all other folders
 ws_typst/*
 !ws_typst/test/
+!ws_typst/test_presentation_template/
