@@ -14,6 +14,23 @@ Build the Docker container (Required only once or if [Dockerfile](./Dockerfile) 
    ./scripts/build.sh
    ```
 
+## Project Structure
+
+### Templates Folder
+
+The [`templates`](./templates/) directory contains reusable Typst templates from GitHub repositories. These templates can be referenced in your projects using relative paths:
+
+```typst
+#import "../../templates/diatypst/lib.typ": *
+```
+
+**Available templates:**
+- `diatypst` - Professional presentation template with modern styling
+
+### Workspace Folder
+
+The [`ws_typst`](./ws_typst/) directory is where you create your Typst projects. Each project should be in its own subfolder and can import templates from the templates folder.
+
 ## Usage
 
 ### Basic Compilation
@@ -39,14 +56,16 @@ Build the Docker container (Required only once or if [Dockerfile](./Dockerfile) 
 
 ## Examples
 
+### Basic Document
 Compiling the test project:
 ```bash
 ./scripts/compile.sh test
 ```
 
-Compiling the test project (alternative):
+### Presentation with Template
+Compiling the presentation example (uses diatypst template):
 ```bash
-./scripts/compile.sh ws_typst/test
+./scripts/compile.sh presentation_example
 ```
 
 ## About Typst

@@ -29,6 +29,7 @@ echo "🚀 Compiling Typst files in ws_typst/${ARTICLE_DIR}/"
 
 docker run --rm \
     --volume ${PROJECT_ROOT}/ws_typst:/home/dockeruser/ws_typst \
+    --volume ${PROJECT_ROOT}/templates:/home/dockeruser/templates \
     --network ${DOCKER_NETWORK} \
     --dns=8.8.8.8 \
     ${DOCKER_IMAGE_NAME} \

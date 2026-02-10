@@ -60,9 +60,10 @@ class TypstCompiler:
         
         try:
             # Compile with typst
+            # Set root to /home/dockeruser to allow access to both ws_typst and templates
             print("🔄 Running typst compile...")
             result = subprocess.run(
-                ['typst', 'compile', typ_file.name],
+                ['typst', 'compile', '--root', '/home/dockeruser', typ_file.name],
                 capture_output=True,
                 text=True,
                 encoding='utf-8',
