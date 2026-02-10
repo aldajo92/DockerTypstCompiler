@@ -9,7 +9,17 @@ This project provides a Docker container that uses [Typst](https://typst.app/) t
 
 ## Setup
 
-Build the Docker container (Required only once or if [Dockerfile](./Dockerfile) is modified):
+1. **Clone the repository with submodules:**
+   ```bash
+   git clone --recurse-submodules https://github.com/aldajo92/DockerTypstCompiler.git
+   ```
+   
+   Or if you already cloned it, initialize submodules:
+   ```bash
+   git submodule update --init --recursive
+   ```
+
+2. **Build the Docker container** (Required only once or if [Dockerfile](./Dockerfile) is modified):
    ```bash
    ./scripts/build.sh
    ```
@@ -25,7 +35,12 @@ The [`templates`](./templates/) directory contains reusable Typst templates from
 ```
 
 **Available templates:**
-- `diatypst` - Professional presentation template with modern styling
+- `diatypst` - Professional presentation template with modern styling (added as git submodule)
+
+To add more templates from GitHub, use git submodules:
+```bash
+git submodule add <repository-url> templates/<template-name>
+```
 
 ### Workspace Folder
 
