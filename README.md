@@ -24,6 +24,15 @@ This project provides a Docker container that uses [Typst](https://typst.app/) t
    ./scripts/build.sh
    ```
 
+3. **(Optional) Enable the `compile_typst` command globally:**
+
+   Source the [`setup.bash`](./setup.bash) script to make the `compile_typst` command available from any directory:
+   ```bash
+   source ~/DockerTypstCompiler/setup.bash
+   ```
+
+   To load it automatically on every new terminal, add the line above to your `~/.bashrc` or `~/.zshrc`.
+
 ## Project Structure
 
 ### Templates Folder
@@ -69,6 +78,21 @@ The [`ws_typst`](./ws_typst/) directory is where you create your Typst projects.
    ./scripts/compile.sh ws_typst/your_project
    ```
 
+### Using `compile_typst` (from any directory)
+
+If you sourced [`setup.bash`](./setup.bash) (see [Setup step 3](#setup)), you can compile from anywhere:
+
+```bash
+# From inside a project folder (e.g., ws_typst/your_project/)
+compile_typst .
+
+# From any directory, using the project name
+compile_typst your_project
+
+# Nested projects work too
+compile_typst IVV_SteerAI/IVV_Way
+```
+
 ## Examples
 
 ### Basic Document
@@ -76,11 +100,19 @@ Compiling the test project:
 ```bash
 ./scripts/compile.sh test
 ```
+Or with `compile_typst`:
+```bash
+compile_typst test
+```
 
 ### Presentation with Template
 Compiling the presentation example (uses diatypst template):
 ```bash
 ./scripts/compile.sh presentation_example
+```
+Or with `compile_typst`:
+```bash
+compile_typst presentation_example
 ```
 
 ## About Typst
